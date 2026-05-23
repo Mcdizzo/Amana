@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Amana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Amana Admin</div>
+        {% if logged_in %}
+        <a href="/admin/logout" class="nav-cta">Toka</a>
+        {% endif %}
+    </nav>
+
+    {% if not logged_in %}
+    <div class="admin-login">
+        <div class="login-box">
+            <h2>Ingia</h2>
+            {% if error %}<div class="login-error">{{ error }}</div>{% endif %}
+            <form method="POST">
+                <input type="password" name="password" placeholder="Nywila" required>
+                <button type="submit">Ingia →</button>
+            </form>
+        </div>
+    </div>
+
+    {% else %}
+
+    <div class="admin-wrap">
+
+        <!-- STATS -->
+        <div class="admin-stats">
+            <div class="stat-card">
+                <div class="stat-num">{{ count }}</div>
+                <div class="stat-label">Wamesajiliwa</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">{{ auctions|length }}</div>
+                <div class="stat-label">Minada</div>
+            </div>
+        </div>
+
+        <!-- ADD AUCTION -->
+        <div class="admin-section">
+            <h3>Ongeza Mnada Mpya</h3>
+            <form method="POST" action="/admin/auction/add" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Namba ya Dhamana</label>
+                        <input type="text" name="bond_number" placeholder="702" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Miaka (Tenor)</label>
+                        <input type="number" name="tenor_years" placeholder="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Riba (%)</label>
+                        <input type="number" name="coupon_rate" step="0.01" placeholder="10.75" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tarehe ya Mnada</label>
+                        <input type="date" name="auction_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tarehe ya Kukomaa</label>
+                        <input type="date" name="maturity_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Kiwango cha Chini (TZS)</label>
+                        <input type="number" name="min_investment" value="1000000" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Hali</label>
+                        <select name="status">
+                            <option value="upcoming">Inakuja</option>
+                            <option value="open">Wazi Sasa</option>
+                            <option value="closed">Imefungwa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Kiasi Kilichotolewa</label>
+                        <input type="text" name="amount_offered" placeholder="TZS 124 Bilioni">
+                    </div>
+                </div>
+                <button type="submit" class="admin-btn">Ongeza Mnada</button>
+            </form>
+        </div>
+
+        <!-- AUCTIONS LIST -->
+        <div class="admin-section">
+            <h3>Manada Yote</h3>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Na.</th>
+                            <th>Riba</th>
+                            <th>Miaka</th>
+                            <th>Tarehe</th>
+                            <th>Hali</th>
+                            <th>Futa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in auctions %}
+                        <tr>
+                            <td>{{ a.bond_number }}</td>
+                            <td>{{ a.coupon_rate }}%</td>
+                            <td>{{ a.tenor_years }}</td>
+                            <td>{{ a.auction_date }}</td>
+                            <td><span class="status-badge {{ a.status }}">{{ a.status }}</span></td>
+                            <td><a href="/admin/auction/delete/{{ a.id }}" class="delete-btn" onclick="return confirm('Futa?')">✕</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- WAITLIST -->
+        <div class="admin-section">
+            <h3>Orodha ya Kusubiri ({{ count }})</h3>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Jina</th>
+                            <th>Simu</th>
+                            <th>Barua pepe</th>
+                            <th>Mahali</th>
+                            <th>Tarehe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for w in waitlist %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ w.name }}</td>
+                            <td>{{ w.phone }}</td>
+                            <td>{{ w.email or '—' }}</td>
+                            <td>{{ w.location or '—' }}</td>
+                            <td>{{ w.joined_at[:10] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- MESSAGES -->
+                <div class="admin-section">
+                    <h3>Ujumbe {% if unread > 0 %}<span class="unread-badge">{{ unread }} mpya</span>{% endif %}</h3>
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jina</th>
+                                    <th>Simu</th>
+                                    <th>Ujumbe</th>
+                                    <th>Tarehe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for m in messages %}
+                                <tr class="{{ 'unread-row' if not m.read }}">
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ m.name }}</td>
+                                    <td>{{ m.phone or '—' }}</td>
+                                    <td>{{ m.message }}</td>
+                                    <td>{{ m.sent_at[:10] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+</body>
+</html>

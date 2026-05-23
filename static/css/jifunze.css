@@ -1,0 +1,504 @@
+/* JIFUNZE PAGE */
+.jifunze-hero {
+    background: var(--navy-2);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.jifunze-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.jifunze-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.jifunze-hero p {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+/* EDU SECTIONS */
+.edu-wrap { max-width: 860px; margin: 0 auto; }
+
+.edu-section {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.edu-section.alt { background: var(--navy-2); }
+
+.edu-num {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--green);
+    opacity: 0.25;
+    line-height: 1;
+    min-width: 60px;
+    padding-top: 0.25rem;
+}
+
+.edu-content { flex: 1; }
+
+.edu-content h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.edu-content p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-size: 0.975rem;
+    line-height: 1.75;
+}
+
+.edu-content strong { color: var(--text); }
+
+.edu-highlight {
+    background: rgba(0,196,140,0.07);
+    border: 1px solid rgba(0,196,140,0.2);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.edu-highlight-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.analogy-box {
+    background: var(--navy-3);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.analogy-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+}
+
+.analogy-box p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* CALC EXAMPLE */
+.calc-example {
+    background: var(--navy-3);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+}
+
+.calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.calc-row:last-child { border-bottom: none; }
+.calc-row.total { margin-top: 0.5rem; padding-top: 1rem; }
+
+.calc-val { color: var(--text); font-weight: 600; }
+.calc-val.highlight { color: var(--green); }
+.calc-val.green { color: var(--green); font-size: 1.1rem; }
+
+/* CDS COMPARISON */
+.comparison-box {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.comparison-side {
+    flex: 1;
+    min-width: 180px;
+    background: var(--navy-3);
+    border-radius: 14px;
+    padding: 1.25rem;
+}
+
+.comparison-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+
+.comparison-title {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.comparison-side p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.comparison-divider {
+    font-size: 1.5rem;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+/* FLOW BOX */
+.flow-box {
+    background: var(--navy-3);
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+}
+
+.flow-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.flow-steps { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.flow-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+/* BID COMPARISON */
+.bid-comparison {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.bid-box {
+    flex: 1;
+    min-width: 200px;
+    background: var(--navy-3);
+    border-radius: 14px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+}
+
+.bid-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.bid-title.competitive {
+    background: rgba(255,107,107,0.15);
+    color: #FF6B6B;
+}
+
+.bid-title.non-competitive {
+    background: rgba(0,196,140,0.15);
+    color: var(--green);
+}
+
+.bid-box p { font-size: 0.875rem; margin-bottom: 0.75rem; }
+
+.bid-who {
+    font-size: 0.78rem;
+    color: var(--green);
+    font-weight: 600;
+}
+
+/* CALCULATOR */
+.bond-example-badge {
+    display: inline-block;
+    background: rgba(0,196,140,0.1);
+    border: 1px solid rgba(0,196,140,0.25);
+    color: var(--green);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.calculator {
+    background: var(--navy-3);
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-top: 1rem;
+}
+
+.calc-input-wrap { margin-bottom: 1.75rem; }
+
+.calc-input-wrap label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.calc-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.calc-input-row input {
+    background: var(--navy-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.calc-input-row input:focus { border-color: var(--green); }
+
+.calc-currency {
+    color: var(--muted);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.calc-slider-wrap input[type="range"] {
+    width: 100%;
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.35rem;
+}
+
+.calc-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.calc-result-card {
+    background: var(--navy-2);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.calc-result-card.big {
+    grid-column: 1 / -1;
+    background: rgba(0,196,140,0.07);
+    border: 1px solid rgba(0,196,140,0.2);
+}
+
+.result-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+}
+
+.result-val {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.result-val.highlight { color: var(--green); }
+.result-val.green { color: var(--green); font-size: 1.3rem; }
+
+.calc-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* AUCTION TRACKER */
+.tracker {
+    background: var(--navy-2);
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.tracker-inner { max-width: 1000px; margin: 0 auto; }
+
+.tracker-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tracker-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.tracker-header p { color: var(--muted); }
+
+.auction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.auction-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.auction-card.open { border-color: rgba(0,196,140,0.4); }
+.auction-card.upcoming { border-color: rgba(255,193,7,0.3); }
+.auction-card:hover { border-color: rgba(0,196,140,0.3); }
+
+.auction-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.auction-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 50px;
+}
+
+.auction-status.open {
+    background: rgba(0,196,140,0.15);
+    color: var(--green);
+}
+
+.auction-status.upcoming {
+    background: rgba(255,193,7,0.15);
+    color: #FFC107;
+}
+
+.auction-status.closed {
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+}
+
+.auction-number {
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.auction-rate {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.auction-tenor {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+}
+
+.auction-details { border-top: 1px solid var(--border); padding-top: 1rem; }
+
+.auction-detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 0.3rem 0;
+}
+
+.auction-detail-row span:last-child {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.tracker-source {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.tracker-source a { color: var(--green); text-decoration: none; }
+
+/* CTA */
+.jifunze-cta {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: var(--navy);
+}
+
+.jifunze-cta-inner { max-width: 600px; margin: 0 auto; }
+
+.jifunze-cta h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.jifunze-cta p {
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+    .edu-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .edu-num { font-size: 2.5rem; }
+    .bid-comparison { flex-direction: column; }
+    .comparison-box { flex-direction: column; }
+    .comparison-divider { display: none; }
+}

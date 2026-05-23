@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amana — Wekeza Tanzania</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">Amana</div>
+        <a href="#waitlist" class="nav-cta">Jiunge</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🇹🇿 Inakuja Hivi Karibuni</div>
+            <h1 class="methali">Mcheza Kwao Hutunzwa.</h1>
+            <p class="hero-sub">Wekeza Tanzania. Popote ulipo.<br>
+            <span class="hero-sub-en">Invest in Tanzania. From anywhere.</span></p>
+            <div class="hero-btns">
+                <a href="#waitlist" class="hero-cta">Hifadhi Nafasi Yako →</a>
+                <br>
+                <a href="/jifunze" class="hero-secondary">Jifunze Kwanza →</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how">
+        <h2>Inafanyaje Kazi?</h2>
+        <p class="how-sub">Hatua tatu. Hakuna taabu.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <h3>Jiunge & Jisajili</h3>
+                <p>Fungua akaunti yako ya Amana kwa dakika chache. Tunahitaji tu kitambulisho chako na akaunti ya benki.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <h3>Chagua Dhamana</h3>
+                <p>Tunaonyesha dhamana zote za serikali kwa lugha rahisi. Jua unachowekeza kabla ya kutoa shilingi moja.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <h3>Wekeza & Pokea</h3>
+                <p>Tuma maombi yako ndani ya app. Kila miezi 6 riba yako inaingia moja kwa moja kwenye akaunti yako ya benki.</p>
+            </div>
+        </div>
+        <div class="how-learn">
+            <p>Bado una maswali kuhusu dhamana za serikali?</p>
+            <a href="/jifunze" class="how-learn-btn">Jifunze Zaidi Kuhusu Uwekezaji →</a>
+        </div>
+    </section>
+
+    <!-- WHY AMANA -->
+    <section class="why">
+        <h2>Kwa Nini Amana?</h2>
+        <div class="reasons">
+            <div class="reason">
+                <div class="reason-icon">🏦</div>
+                <h3>Salama Kabisa</h3>
+                <p>Dhamana za serikali zinahakikishwa na Benki Kuu ya Tanzania. Pesa yako iko salama.</p>
+            </div>
+            <div class="reason">
+                <div class="reason-icon">🌍</div>
+                <h3>Popote Ulipo</h3>
+                <p>Uko Canada, UAE, au Dar es Salaam — unaweza kuwekeza Tanzania bila kwenda benki.</p>
+            </div>
+            <div class="reason">
+                <div class="reason-icon">🗣️</div>
+                <h3>Kwa Lugha Yako</h3>
+                <p>Hakuna maneno magumu ya kibenki. Amana inakueleza kwa Kiswahili rahisi.</p>
+            </div>
+            <div class="reason">
+                <div class="reason-icon">📱</div>
+                <h3>Simu Yako Tu</h3>
+                <p>Hakuna ofisi. Hakuna foleni. Simu yako ndiyo benki yako ya uwekezaji.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAITLIST -->
+    <section class="waitlist" id="waitlist">
+        <div class="waitlist-inner">
+            <div class="waitlist-text">
+                <h2>Hifadhi Nafasi Yako.</h2>
+                <p>Tunafungua ufikiaji hivi karibuni. Weka jina lako sasa upate nafasi ya kwanza.</p>
+                <div class="counter-wrap">
+                    <span class="counter" id="counter">—</span>
+                    <span class="counter-label">wameshasajili</span>
+                </div>
+            </div>
+            <form class="waitlist-form" id="waitlistForm">
+                <input type="text" id="name" placeholder="Jina lako kamili *" required>
+                <input type="tel" id="phone" placeholder="Namba ya simu * (+255...)" required>
+                <input type="email" id="email" placeholder="Barua pepe (si lazima)">
+                <select id="location">
+                    <option value="" disabled selected>Uko wapi sasa hivi?</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="UAE">UAE</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">Uingereza</option>
+                    <option value="USA">Marekani</option>
+                    <option value="Other">Mahali pengine</option>
+                </select>
+                <button type="submit" id="submitBtn">Hifadhi Nafasi Yangu →</button>
+                <div class="form-msg" id="formMsg"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- SHARE -->
+    <section class="share" id="shareSection" style="display:none">
+        <div class="share-inner">
+            <h2>Waambie Marafiki Wako 🇹🇿</h2>
+            <p>Nakili ujumbe huu na utume WhatsApp</p>
+            <div class="share-msg" id="shareMsg"></div>
+            <button class="share-btn" id="copyBtn">Nakili Ujumbe</button>
+            <a class="whatsapp-btn" id="whatsappBtn" href="#" target="_blank">Fungua WhatsApp →</a>
+        </div>
+    </section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="contact-inner">
+        <div class="contact-text">
+            <h2>Una Swali?</h2>
+            <p>Tunapatikana moja kwa moja. Tuandikie WhatsApp au tuma ujumbe hapa chini.</p>
+            <a href="https://wa.me/255629463710?text=Habari%2C%20nina%20swali%20kuhusu%20Amana..." 
+               class="whatsapp-contact-btn" 
+               target="_blank">
+                <span>💬</span>
+                Tuandikie WhatsApp
+            </a>
+            <p class="contact-or">Au tuma ujumbe hapa</p>
+        </div>
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="contactName" placeholder="Jina lako *" required>
+            <input type="tel" id="contactPhone" placeholder="Namba ya simu (si lazima)">
+            <textarea id="contactMessage" placeholder="Swali lako..." rows="4" required></textarea>
+            <button type="submit" id="contactBtn">Tuma Ujumbe →</button>
+            <div class="form-msg" id="contactMsg"></div>
+        </form>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">Amana</div>
+        <p>Wekeza Tanzania. Popote ulipo.</p>
+        <p class="footer-small">© 2026 Amana. Dar es Salaam, Tanzania.</p>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
